@@ -225,9 +225,9 @@ filter( unsigned char * M, unsigned char * W, int width, int height){
 			 */
 			result = _mm_add_epi16(vec1, vec2);
 			result = _mm_add_epi16(result, vec3);
-	        result = _mm_add_epi16(result, vec4);
-        	result = _mm_add_epi16(result, vec5);
-       		result = _mm_add_epi16(result, vec6);
+	        	result = _mm_add_epi16(result, vec4);
+        		result = _mm_add_epi16(result, vec5);
+       			result = _mm_add_epi16(result, vec6);
 			result = _mm_add_epi16(result, _mm_set1_epi16(765));
 			/*
 			 *	Mnozymy wynik przez 2731, poniewaz wartosc ta odpowiada wartosci
@@ -238,13 +238,13 @@ filter( unsigned char * M, unsigned char * W, int width, int height){
 			 *	przypisanie piksela o wlasciwej wartosci
 			 */ 
 			W[cord2 - 7] = _mm_extract_epi16(result, 0);
-            W[cord2 - 6] = _mm_extract_epi16(result, 1);
-            W[cord2 - 5] = _mm_extract_epi16(result, 2);
-            W[cord2 - 4] = _mm_extract_epi16(result, 3);
-  		    W[cord2 - 3] = _mm_extract_epi16(result, 4);
+            		W[cord2 - 6] = _mm_extract_epi16(result, 1);
+      		      	W[cord2 - 5] = _mm_extract_epi16(result, 2);
+            		W[cord2 - 4] = _mm_extract_epi16(result, 3);
+  			W[cord2 - 3] = _mm_extract_epi16(result, 4);
 			W[cord2 - 2] = _mm_extract_epi16(result, 5);
-            W[cord2 - 1] = _mm_extract_epi16(result, 6);
-            W[cord2] = _mm_extract_epi16(result, 7);
+            		W[cord2 - 1] = _mm_extract_epi16(result, 6);
+            		W[cord2] = _mm_extract_epi16(result, 7);
 			
 		}
 	}
